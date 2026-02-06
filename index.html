@@ -3,161 +3,184 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Silvertown Consulting — practical regulatory and governance solutions for financial institutions." />
+  <meta name="description" content="Silvertown Consulting — practical regulatory and governance solutions." />
   <title>Silvertown Consulting</title>
 
-  <!-- Favicon (uses your logo) -->
-  <link rel="icon" href="assets/silvertown-logo.png" />
+  <!-- Favicon -->
+  <link rel="icon" href="logo.png" />
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <header class="wrap">
-    <nav class="nav">
-      <a class="brand" href="#top" aria-label="Silvertown Consulting">
-        <img src="assets/silvertown-logo.png" alt="" class="brand__mark" />
-        <span class="brand__name">Silvertown Consulting</span>
-      </a>
 
-      <div class="nav__links">
-        <a href="#services">Services</a>
-        <a href="#products">Products</a>
-        <a href="#contact" class="btn btn--ghost">Contact</a>
-      </div>
-    </nav>
-  </header>
+<header class="wrap">
+  <nav class="nav">
+    <a class="brand" href="/" aria-label="Silvertown Consulting">
+      <img src="logo.png" alt="" class="brand__mark" />
+      <span class="brand__name">Silvertown Consulting</span>
+    </a>
 
-  <main id="top" class="wrap">
-    <section class="hero">
-      <div class="hero__copy">
-        <h1>Regulatory compliance that works in practice.</h1>
-        <p class="lead">
-          Silvertown Consulting helps financial institutions design and operate controls that are practical,
-          auditable, and regulator-ready.
-        </p>
-
-        <div class="hero__cta">
-          <a class="btn" href="mailto:products@silvertownconsulting.com">
-            Email: products@silvertownconsulting.com
-          </a>
-          <a class="btn btn--ghost"
-             href="https://www.linkedin.com/company/silvertown-consulting/"
-             target="_blank" rel="noopener">
-            LinkedIn
-          </a>
-        </div>
-      </div>
-
-      <div class="hero__card" role="note" aria-label="Highlights">
-        <h2>Focus areas</h2>
-        <ul class="ticks">
-          <li>Conflicts of Interest governance (MiFID II and beyond)</li>
-          <li>Practical policy, control and register design</li>
-          <li>Implementation support and evidence for supervisors</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="services" class="section">
-      <h2>Services</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Conflicts management</h3>
-          <p>
-            Help designing, implementing and operating conflicts frameworks, including governance, controls,
-            attestations and reporting.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Regulatory & governance advisory</h3>
-          <p>
-            Clear, pragmatic advice with a focus on what actually works — and what you can evidence.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Control design & operationalisation</h3>
-          <p>
-            Translate obligations into controls, registers, workflows and audit trails that are fit for purpose.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section id="products" class="section">
-  <h2>Products</h2>
-
-  <!-- Product 1: CIRE -->
-  <div class="product">
-    <div class="product__badge">CIRE</div>
-    <div class="product__body">
-      <h3>Conflicts of Interest Register for Employees</h3>
-      <p>
-        A structured, regulator-ready conflicts register for employee disclosures — designed to keep conflicts
-        management living and actionable, not a static checkbox.
-      </p>
-      <div class="product__meta">
-        <span class="pill">MiFID II aligned</span>
-        <span class="pill">Auditable</span>
-        <span class="pill">Practical workflow</span>
-      </div>
+    <div class="nav__links">
+      <a href="#services">Services</a>
+      <a href="#products">Products</a>
+      <a href="#contact" class="btn btn--ghost">Contact</a>
     </div>
-  </div>
+  </nav>
+</header>
 
-  <!-- Product 2: Regulatory Heatmap -->
-  <div class="product">
-    <div class="product__badge">RHM</div>
-    <div class="product__body">
-      <h3>Regulatory Heatmap</h3>
-      <p>
-        A lightweight dashboard to track regulatory developments, surface what matters, and support prioritisation
-        across jurisdictions and themes.
+<main class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__copy">
+      <h1>Regulatory compliance that works in practice.</h1>
+      <p class="lead">
+        Silvertown Consulting helps financial institutions design and operate
+        controls that are practical, auditable, and regulator-ready.
       </p>
-      <div class="product__meta">
-        <span class="pill">Actionable overview</span>
-        <span class="pill">Stakeholder-ready</span>
-        <span class="pill">Customisable</span>
-      </div>
 
-      <div class="product__actions">
-        <a class="btn btn--ghost" href="mailto:products@silvertownconsulting.com?subject=Regulatory%20Heatmap%20%E2%80%94%20request%20a%20demo">
-          Request a demo
+      <div class="hero__cta">
+        <a class="btn" href="mailto:products@silvertownconsulting.com">
+          Email: products@silvertownconsulting.com
+        </a>
+        <a class="btn btn--ghost"
+           href="https://www.linkedin.com/company/silvertown-consulting/"
+           target="_blank" rel="noopener">
+          LinkedIn
         </a>
       </div>
     </div>
-  </div>
-</section>
 
+    <div class="hero__card">
+      <h2>Focus areas</h2>
+      <ul class="ticks">
+        <li>Conflicts of Interest governance (MiFID II and beyond)</li>
+        <li>Practical policy, control and register design</li>
+        <li>Implementation support and evidence for supervisors</li>
+      </ul>
+    </div>
+  </section>
 
-    <section id="contact" class="section">
-      <h2>Contact</h2>
-      <div class="contact card">
-        <div>
-          <p class="muted">For product enquiries:</p>
-          <p><a href="mailto:products@silvertownconsulting.com">products@silvertownconsulting.com</a></p>
-        </div>
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <h2>Services</h2>
 
-        <div>
-          <p class="muted">LinkedIn:</p>
-          <p>
-            <a href="https://www.linkedin.com/company/silvertown-consulting/"
-               target="_blank" rel="noopener">
-              Silvertown Consulting on LinkedIn
-            </a>
-          </p>
+    <div class="grid">
+      <article class="card">
+        <h3>Conflicts management</h3>
+        <p>
+          Help designing, implementing and operating conflicts frameworks,
+          including governance, controls, attestations and reporting.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Regulatory &amp; governance advisory</h3>
+        <p>
+          Clear, pragmatic advice with a focus on what actually works —
+          and what you can evidence.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Control design &amp; operationalisation</h3>
+        <p>
+          Translate obligations into controls, registers, workflows and
+          audit trails that are fit for purpose.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products" class="section">
+    <h2>Products</h2>
+
+    <!-- CIRE -->
+    <div class="product">
+      <div class="product__badge">CIRE</div>
+
+      <div class="product__body">
+        <h3>Conflicts of Interest Register for Employees</h3>
+        <p>
+          A structured, regulator-ready conflicts register for employee disclosures —
+          designed to keep conflicts management living and actionable,
+          not a static checkbox.
+        </p>
+
+        <div class="product__meta">
+          <span class="pill">MiFID II aligned</span>
+          <span class="pill">Auditable</span>
+          <span class="pill">Practical workflow</span>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
 
-  <footer class="footer wrap">
-    <div class="footer__line"></div>
-    <p>© <span id="year"></span> Silvertown Consulting. All rights reserved.</p>
-  </footer>
+    <!-- REGULATORY HEATMAP -->
+    <div class="product">
+      <div class="product__badge">RHM</div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+      <div class="product__body">
+        <h3>Regulatory Heatmap</h3>
+        <p>
+          A lightweight dashboard to track regulatory developments,
+          surface what matters, and support prioritisation across
+          jurisdictions and themes.
+        </p>
+
+        <div class="product__meta">
+          <span class="pill">Actionable overview</span>
+          <span class="pill">Stakeholder-ready</span>
+          <span class="pill">Customisable</span>
+        </div>
+
+        <div class="product__actions">
+          <a class="btn btn--ghost"
+             href="mailto:products@silvertownconsulting.com?subject=Regulatory%20Heatmap%20—%20request%20a%20demo">
+            Request a demo
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+
+    <div class="contact card">
+      <div>
+        <p class="muted">For product enquiries:</p>
+        <p>
+          <a href="mailto:products@silvertownconsulting.com">
+            products@silvertownconsulting.com
+          </a>
+        </p>
+      </div>
+
+      <div>
+        <p class="muted">LinkedIn:</p>
+        <p>
+          <a href="https://www.linkedin.com/company/silvertown-consulting/"
+             target="_blank" rel="noopener">
+            Silvertown Consulting on LinkedIn
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer wrap">
+  <div class="footer__line"></div>
+  <p>© <span id="year"></span> Silvertown Consulting. All rights reserved.</p>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
