@@ -1,309 +1,200 @@
-/* Silvertown Consulting — single-page static site
-   Palette extracted from logo:
-   Navy: #152130
-   Deep navy: #090E18
-   Off-white: #FAF3E4
-   Greys (optional): #C3C3C2 #848585 #434548
-*/
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Silvertown Consulting — practical regulatory and governance solutions for financial institutions." />
+  <title>Silvertown Consulting</title>
 
-:root{
-  --bg0:#090E18;
-  --bg1:#152130;
-  --ink:#FAF3E4;
-  --muted: rgba(250,243,228,.75);
-  --line: rgba(250,243,228,.14);
-  --card: rgba(250,243,228,.06);
-  --card2: rgba(250,243,228,.09);
-  --shadow: rgba(0,0,0,.35);
-  --focus: rgba(250,243,228,.35);
-  --radius: 18px;
-  --radius2: 28px;
-  --max: 1080px;
-}
+  <!-- Favicon -->
+  <link rel="icon" href="logo.png" />
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-  color:var(--ink);
-  background:
-    radial-gradient(900px 500px at 30% 20%, rgba(250,243,228,.10), transparent 60%),
-    radial-gradient(700px 420px at 80% 30%, rgba(250,243,228,.06), transparent 55%),
-    linear-gradient(135deg, var(--bg0), var(--bg1));
-}
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-a{color:var(--ink); text-decoration:none}
-a:hover{opacity:.92; text-decoration:underline}
-a:focus-visible, button:focus-visible{
-  outline: 3px solid var(--focus);
-  outline-offset: 3px;
-  border-radius: 10px;
-}
+<body>
 
-.wrap{
-  width:min(var(--max), calc(100% - 40px));
-  margin:0 auto;
-}
+<header class="wrap">
+  <nav class="nav">
+    <a class="brand" href="." aria-label="Silvertown Consulting">
+      <!-- INLINE SIZE FIX (cannot be overridden) -->
+      <img
+        src="logo.png"
+        alt=""
+        class="brand__mark"
+        style="width:44px;height:44px;object-fit:cover;border-radius:8px;display:block;"
+      />
+      <span class="brand__name">Silvertown Consulting</span>
+    </a>
 
-.nav{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
-  padding:22px 0;
-}
+    <div class="nav__links">
+      <a href="#services">Services</a>
+      <a href="#products">Products</a>
+      <a href="#contact" class="btn btn--ghost">Contact</a>
+    </div>
+  </nav>
+</header>
 
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  text-decoration:none;
-}
-.brand__logo{
-  width:36px;
-  height:36px;
-  border-radius: 10px;
-  box-shadow: 0 10px 24px var(--shadow);
-}
-.brand__name{
-  font-weight: 650;
-  letter-spacing: .2px;
-}
+<main class="wrap">
 
-.nav__links{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-.nav__links a{
-  padding:10px 12px;
-  border-radius: 12px;
-  text-decoration:none;
-}
-.nav__links a:hover{
-  background: rgba(250,243,228,.06);
-  text-decoration:none;
-}
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__copy">
+      <h1>Regulatory compliance that works in practice.</h1>
+      <p class="lead">
+        Silvertown Consulting helps financial institutions design and operate
+        controls that are practical, auditable, and regulator-ready.
+      </p>
 
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  padding:12px 14px;
-  border-radius: 14px;
-  border: 1px solid rgba(250,243,228,.22);
-  background: rgba(250,243,228,.10);
-  text-decoration:none;
-  box-shadow: 0 10px 24px var(--shadow);
-}
-.btn:hover{background: rgba(250,243,228,.14); text-decoration:none}
-.btn--ghost{
-  background: transparent;
-  border-color: rgba(250,243,228,.22);
-  box-shadow: none;
-}
-.btn--ghost:hover{background: rgba(250,243,228,.06)}
+      <div class="hero__cta">
+        <a class="btn" href="mailto:products@silvertownconsulting.com">
+          Email: products@silvertownconsulting.com
+        </a>
+        <a
+          class="btn btn--ghost"
+          href="https://www.linkedin.com/company/silvertown-consulting/"
+          target="_blank"
+          rel="noopener"
+        >
+          LinkedIn
+        </a>
+      </div>
+    </div>
 
-.hero{
-  display:grid;
-  grid-template-columns: 1.25fr .75fr;
-  gap:22px;
-  padding: 26px 0 8px;
-  align-items: stretch;
-}
-.hero__copy{
-  padding: 18px 0;
-}
-h1{
-  font-size: clamp(30px, 4vw, 48px);
-  line-height: 1.05;
-  margin: 0 0 10px;
-  letter-spacing: .2px;
-}
-.lead{
-  font-size: 18px;
-  line-height: 1.55;
-  color: var(--muted);
-  margin: 0 0 16px;
-  max-width: 58ch;
-}
-.hero__cta{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin: 10px 0 10px;
-}
-.small{font-size: 13px}
-.muted{color: var(--muted)}
+    <div class="hero__card">
+      <h2>Focus areas</h2>
+      <ul class="ticks">
+        <li>Conflicts of Interest governance (MiFID II and beyond)</li>
+        <li>Practical policy, control and register design</li>
+        <li>Implementation support and evidence for supervisors</li>
+      </ul>
+    </div>
+  </section>
 
-.hero__card{
-  border-radius: var(--radius2);
-  border: 1px solid var(--line);
-  background: linear-gradient(180deg, rgba(250,243,228,.08), rgba(250,243,228,.05));
-  padding: 18px 18px 14px;
-  box-shadow: 0 18px 40px var(--shadow);
-}
-.hero__card h2{
-  margin: 0 0 10px;
-  font-size: 16px;
-  letter-spacing: .3px;
-  text-transform: uppercase;
-  color: rgba(250,243,228,.90);
-}
-.ticks{
-  list-style:none;
-  padding:0;
-  margin:0;
-  display:grid;
-  gap:10px;
-}
-.ticks li{
-  position:relative;
-  padding-left: 24px;
-  color: var(--muted);
-  line-height: 1.45;
-}
-.ticks li::before{
-  content:"✓";
-  position:absolute;
-  left:0;
-  top:0;
-  color: rgba(250,243,228,.90);
-}
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <h2>Services</h2>
 
-.section{
-  padding: 26px 0;
-}
-.section h2{
-  font-size: 22px;
-  margin: 0 0 14px;
-  letter-spacing: .2px;
-}
-.grid{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap:14px;
-}
-.card{
-  border-radius: var(--radius);
-  border: 1px solid var(--line);
-  background: rgba(250,243,228,.06);
-  padding: 16px;
-}
-.card h3{
-  margin: 0 0 8px;
-  font-size: 16px;
-}
-.card p{
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.55;
-}
+    <div class="grid">
+      <article class="card">
+        <h3>Conflicts management</h3>
+        <p>
+          Help designing, implementing and operating conflicts frameworks,
+          including governance, controls, attestations and reporting.
+        </p>
+      </article>
 
-.product{
-  display:flex;
-  gap:14px;
-  border-radius: var(--radius2);
-  border: 1px solid var(--line);
-  background: linear-gradient(180deg, rgba(250,243,228,.07), rgba(250,243,228,.05));
-  padding: 16px;
-}
-.product__badge{
-  flex: 0 0 auto;
-  width: 76px;
-  height: 76px;
-  border-radius: 20px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight: 800;
-  letter-spacing: .8px;
-  background: rgba(250,243,228,.10);
-  border: 1px solid rgba(250,243,228,.18);
-  box-shadow: 0 18px 40px var(--shadow);
-}
-.product__body h3{
-  margin: 2px 0 8px;
-}
-.product__body p{
-  margin: 0 0 10px;
-  color: var(--muted);
-  line-height: 1.55;
-}
-.product__meta{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-}
-.pill{
-  font-size: 12px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(250,243,228,.18);
-  background: rgba(250,243,228,.06);
-  color: rgba(250,243,228,.88);
-}
+      <article class="card">
+        <h3>Regulatory &amp; governance advisory</h3>
+        <p>
+          Clear, pragmatic advice with a focus on what actually works —
+          and what you can evidence.
+        </p>
+      </article>
 
-.contact{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-.footer{
-  padding: 18px 0 34px;
-}
-.footer__line{
-  height:1px;
-  background: var(--line);
-  margin: 0 0 14px;
-}
-.footer p{
-  margin:0;
-  color: rgba(250,243,228,.70);
-  font-size: 13px;
-}
+      <article class="card">
+        <h3>Control design &amp; operationalisation</h3>
+        <p>
+          Translate obligations into controls, registers, workflows and
+          audit trails that are fit for purpose.
+        </p>
+      </article>
+    </div>
+  </section>
 
-@media (max-width: 860px){
-  .hero{grid-template-columns: 1fr}
-  .grid{grid-template-columns: 1fr}
-  .contact{grid-template-columns: 1fr}
-  .nav__links{display:none}
-}
-/* Navbar brand fix — prevent logo/name truncation */
-.nav{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
-  padding:22px 0;
-  flex-wrap: nowrap;
-}
+  <!-- PRODUCTS -->
+  <section id="products" class="section">
+    <h2>Products</h2>
 
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  text-decoration:none;
-  flex: 1 1 auto;
-  min-width: 220px;
-}
+    <!-- CIRE -->
+    <div class="product">
+      <div class="product__badge">CIRE</div>
 
-.brand__name{
-  font-weight: 650;
-  letter-spacing: .2px;
-  white-space: nowrap;
-  overflow: visible;
-  text-overflow: clip;
-}
-/* === Navbar logo fix (CRITICAL) === */
-.brand__mark {
-  width: 44px;
-  height: 44px;
-  border-radius: 8px;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  flex-shrink: 0;
-}
+      <div class="product__body">
+        <h3>Conflicts of Interest Register for Employees</h3>
+        <p>
+          A structured, regulator-ready conflicts register for employee disclosures —
+          designed to keep conflicts management living and actionable,
+          not a static checkbox.
+        </p>
+
+        <div class="product__meta">
+          <span class="pill">MiFID II aligned</span>
+          <span class="pill">Auditable</span>
+          <span class="pill">Practical workflow</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- REGULATORY HEATMAP -->
+    <div class="product">
+      <div class="product__badge">RHM</div>
+
+      <div class="product__body">
+        <h3>Regulatory Heatmap</h3>
+        <p>
+          A lightweight dashboard to track regulatory developments,
+          surface what matters, and support prioritisation across
+          jurisdictions and themes.
+        </p>
+
+        <div class="product__meta">
+          <span class="pill">Actionable overview</span>
+          <span class="pill">Stakeholder-ready</span>
+          <span class="pill">Customisable</span>
+        </div>
+
+        <div class="product__actions">
+          <a
+            class="btn btn--ghost"
+            href="mailto:products@silvertownconsulting.com?subject=Regulatory%20Heatmap%20—%20request%20a%20demo"
+          >
+            Request a demo
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+
+    <div class="contact card">
+      <div>
+        <p class="muted">For product enquiries:</p>
+        <p>
+          <a href="mailto:products@silvertownconsulting.com">
+            products@silvertownconsulting.com
+          </a>
+        </p>
+      </div>
+
+      <div>
+        <p class="muted">LinkedIn:</p>
+        <p>
+          <a
+            href="https://www.linkedin.com/company/silvertown-consulting/"
+            target="_blank"
+            rel="noopener"
+          >
+            Silvertown Consulting on LinkedIn
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer wrap">
+  <div class="footer__line"></div>
+  <p>© <span id="year"></span> Silvertown Consulting. All rights reserved.</p>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
