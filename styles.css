@@ -271,3 +271,29 @@ h1{
   .contact{grid-template-columns: 1fr}
   .nav__links{display:none}
 }
+/* Navbar brand fix — prevent logo/name truncation */
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:22px 0;
+  flex-wrap: nowrap;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  flex: 1 1 auto;
+  min-width: 220px;
+}
+
+.brand__name{
+  font-weight: 650;
+  letter-spacing: .2px;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: clip;
+}
