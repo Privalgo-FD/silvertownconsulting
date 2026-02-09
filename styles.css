@@ -43,10 +43,10 @@ header.wrap{padding:14px 0 10px}
 
 /* Logo mark — reduced to ~25% visual dominance */
 .brand__mark{
-  width:28px;
-  height:28px;
+  width:72px;
+  height:72px;
   object-fit:cover;
-  border-radius:6px;
+  border-radius:12px;
   display:block;
 }
 
