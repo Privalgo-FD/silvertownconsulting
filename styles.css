@@ -80,7 +80,7 @@ header.wrap{padding:14px 0 10px}
 
 .hero{
   display:grid;
-  grid-template-columns: 1.3fr .9fr;
+  grid-template-columns: 1.55fr .75fr;
   gap:22px;
   padding:26px 0 18px;
   border-top:1px solid var(--line);
