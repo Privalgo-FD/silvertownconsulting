@@ -24,6 +24,12 @@
     <div class="nav__links">
       <a href="#services">Services</a>
       <a href="#products">Products</a>
+
+      <!-- Credentials button -->
+      <button type="button" class="btn btn--ghost" id="credentialsBtn" aria-haspopup="dialog">
+        Credentials
+      </button>
+
       <a href="#contact" class="btn btn--ghost">Contact</a>
     </div>
   </nav>
@@ -145,37 +151,35 @@
         </div>
       </div>
     </div>
+
+    <!-- DORA CONSULTING -->
+    <div class="product">
+      <div class="product__badge">DORA</div>
+
+      <div class="product__body">
+        <h3>DORA consulting</h3>
+        <p>
+          Practical support to design, implement and evidence Digital Operational Resilience (DORA) controls —
+          including gap analysis, governance, policy set-up, third-party oversight, testing readiness, and
+          regulator-ready documentation.
+        </p>
+
+        <div class="product__meta">
+          <span class="pill">Gap analysis</span>
+          <span class="pill">Governance &amp; policies</span>
+          <span class="pill">Third-party oversight</span>
+          <span class="pill">Evidence-ready</span>
+        </div>
+
+        <div class="product__actions">
+          <a class="btn btn--ghost"
+             href="mailto:products@silvertownconsulting.com?subject=DORA%20consulting%20—%20request%20a%20call">
+            Request a call
+          </a>
+        </div>
+      </div>
+    </div>
   </section>
-
-  <!-- DORA CONSULTING -->
-<div class="product">
-  <div class="product__badge">DORA</div>
-
-  <div class="product__body">
-    <h3>DORA consulting</h3>
-    <p>
-      Practical support to design, implement and evidence Digital Operational Resilience (DORA) controls —
-      including gap analysis, governance, policy set-up, third-party oversight, testing readiness, and
-      regulator-ready documentation.
-    </p>
-
-    <div class="product__meta">
-      <span class="pill">Gap analysis</span>
-      <span class="pill">Governance &amp; policies</span>
-      <span class="pill">Third-party oversight</span>
-      <span class="pill">Evidence-ready</span>
-    </div>
-
-    <div class="product__actions">
-      <a
-        class="btn btn--ghost"
-        href="mailto:products@silvertownconsulting.com?subject=DORA%20consulting%20—%20request%20a%20call"
-      >
-        Request a call
-      </a>
-    </div>
-  </div>
-</div>
 
   <!-- CONTACT -->
   <section id="contact" class="section">
@@ -210,8 +214,78 @@
   <p>© <span id="year"></span> Silvertown Consulting. All rights reserved.</p>
 </footer>
 
+<!-- CREDENTIALS MODAL -->
+<div class="modal" id="credentialsModal" role="dialog" aria-modal="true" aria-labelledby="credentialsTitle" hidden>
+  <div class="modal__backdrop" data-close="true"></div>
+
+  <div class="modal__panel" role="document">
+    <div class="modal__header">
+      <h2 id="credentialsTitle">Regulatory Track Record</h2>
+      <button type="button" class="modal__close" aria-label="Close" data-close="true">✕</button>
+    </div>
+
+    <div class="modal__body">
+
+      <h3>Enterprise Delivery</h3>
+      <ul class="modal__list">
+        <li>Built Rabobank’s Global Conflicts of Interest platform (live since 2013)</li>
+        <li>Delivered Market Abuse infrastructure under LIBOR remediation program</li>
+        <li>Architected regulatory heatmaps and compliance systems for EU-regulated institutions</li>
+      </ul>
+
+      <h3>Leadership &amp; Governance</h3>
+      <ul class="modal__list">
+        <li>Former Chief Compliance Officer, Euronext Group (35-person team)</li>
+        <li>Established Compliance function within FinTech</li>
+        <li>Responsible for SOC2 program implementation</li>
+      </ul>
+
+      <h3>Regulatory Engagement</h3>
+      <ul class="modal__list">
+        <li>Engaged with 10+ EU regulators</li>
+        <li>Operated across multi-jurisdictional supervision environments</li>
+        <li>Delivered regulatory change in fraud and market abuse domains</li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+
 <script>
+  // Footer year
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Credentials modal
+  const btn = document.getElementById("credentialsBtn");
+  const modal = document.getElementById("credentialsModal");
+
+  function openModal() {
+    if (!modal) return;
+    modal.hidden = false;
+    document.body.style.overflow = "hidden"; // prevent background scroll
+    const closeBtn = modal.querySelector(".modal__close");
+    closeBtn && closeBtn.focus();
+  }
+
+  function closeModal() {
+    if (!modal) return;
+    modal.hidden = true;
+    document.body.style.overflow = "";
+    btn && btn.focus();
+  }
+
+  btn && btn.addEventListener("click", openModal);
+
+  // Close on backdrop click or close button click
+  modal && modal.addEventListener("click", (e) => {
+    const target = e.target;
+    if (target && target.getAttribute("data-close") === "true") closeModal();
+  });
+
+  // Close on Escape
+  document.addEventListener("keydown", (e) => {
+    if (modal && !modal.hidden && e.key === "Escape") closeModal();
+  });
 </script>
 
 </body>
