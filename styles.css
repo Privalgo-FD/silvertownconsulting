@@ -4,6 +4,10 @@
   --text:#f3f4f6;
   --muted:#b6c0d1;
   --line:rgba(255,255,255,.10);
+
+  /* Air France–KLM-ish light blue for headings */
+  --header:#7fc7ff;
+
   --accent:#e9e1d0;
 }
 
@@ -16,6 +20,7 @@ body{
   line-height:1.55;
 }
 
+/* Links */
 a{color:var(--accent); text-decoration:none}
 a:hover{text-decoration:underline}
 
@@ -41,10 +46,9 @@ header.wrap{padding:14px 0 10px}
   color:var(--text);
 }
 
-/* Logo mark — reduced to ~25% visual dominance */
 .brand__mark{
-  width:84px;
-  height:84px;
+  width:72px;
+  height:72px;
   object-fit:cover;
   border-radius:12px;
   display:block;
@@ -55,14 +59,33 @@ header.wrap{padding:14px 0 10px}
   letter-spacing:.02em;
 }
 
+/* NAV LINKS */
 .nav__links{
   display:flex;
   align-items:center;
   gap:14px;
   flex-wrap:wrap;
 }
-.nav__links a{color:var(--muted)}
-.nav__links a:hover{color:var(--text); text-decoration:none}
+
+/* Make <a> and <button> identical in nav */
+.nav__link{
+  font: inherit;                 /* fixes button font mismatch */
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  padding: 10px 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.nav__link:hover{
+  color: var(--text);
+  background: rgba(255,255,255,.06);
+  text-decoration: none;
+}
 
 .btn{
   display:inline-flex;
@@ -74,6 +97,7 @@ header.wrap{padding:14px 0 10px}
   background:rgba(255,255,255,.06);
   color:var(--text);
   text-decoration:none;
+  font: inherit;                 /* ensures button text matches site font */
 }
 .btn:hover{background:rgba(255,255,255,.10); text-decoration:none}
 .btn--ghost{background:transparent}
@@ -91,6 +115,7 @@ header.wrap{padding:14px 0 10px}
   margin:0 0 10px;
   font-size: clamp(28px, 3vw, 44px);
   letter-spacing:-.02em;
+  color: var(--header);
 }
 .lead{
   margin:0 0 14px;
@@ -105,9 +130,12 @@ header.wrap{padding:14px 0 10px}
   border:1px solid var(--line);
   border-radius:16px;
   padding:16px 16px 14px;
-  margin-top: 12px; /* optical drop */
 }
-.hero__card h2{margin:0 0 10px; font-size:18px}
+.hero__card h2{
+  margin:0 0 10px;
+  font-size:18px;
+  color: var(--header);
+}
 .ticks{margin:0; padding-left:18px; color:var(--muted)}
 .ticks li{margin:6px 0}
 
@@ -116,6 +144,7 @@ header.wrap{padding:14px 0 10px}
   margin:0 0 14px;
   font-size:22px;
   letter-spacing:-.01em;
+  color: var(--header);
 }
 
 .grid{
@@ -130,7 +159,11 @@ header.wrap{padding:14px 0 10px}
   border-radius:16px;
   padding:14px 14px 12px;
 }
-.card h3{margin:0 0 8px; font-size:16px}
+.card h3{
+  margin:0 0 8px;
+  font-size:16px;
+  color: var(--header);
+}
 .card p{margin:0; color:var(--muted)}
 
 .product{
@@ -150,8 +183,13 @@ header.wrap{padding:14px 0 10px}
   background:rgba(255,255,255,.06);
   border:1px solid var(--line);
   font-weight:700;
+  font-size: 13px;
+  letter-spacing: .04em;
 }
-.product__body h3{margin:0 0 6px}
+.product__body h3{
+  margin:0 0 6px;
+  color: var(--header);
+}
 .product__body p{margin:0 0 10px; color:var(--muted)}
 
 .product__meta{display:flex; gap:8px; flex-wrap:wrap; margin:8px 0 0}
@@ -183,8 +221,91 @@ header.wrap{padding:14px 0 10px}
   margin:18px 0 12px;
 }
 
+/* ===== Modal (Credentials) ===== */
+
+.modal[hidden] { display: none; }
+
+.modal{
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+}
+
+.modal__backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+}
+
+.modal__panel{
+  position: relative;
+  width: min(760px, calc(100% - 32px));
+  margin: 8vh auto 0;
+  background: rgba(15, 26, 45, .96);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.45);
+  padding: 16px 16px 14px;
+}
+
+.modal__header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.modal__header h2{
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  color: var(--header);
+}
+
+.modal__close{
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.modal__close:hover{
+  background: rgba(255,255,255,.10);
+}
+
+.modal__body{
+  padding-top: 12px;
+  color: var(--muted);
+}
+
+.modal__body h3{
+  margin: 16px 0 6px;
+  font-size: 13px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--header);
+}
+
+.modal__list{
+  margin: 0;
+  padding-left: 18px;
+}
+
+.modal__list li{
+  margin: 8px 0;
+}
+
 @media (max-width: 900px){
   .hero{grid-template-columns:1fr}
   .grid{grid-template-columns:1fr}
   .contact.card{grid-template-columns:1fr}
+}
+
+@media (max-width: 520px){
+  .modal__panel{ margin: 5vh auto 0; }
 }
