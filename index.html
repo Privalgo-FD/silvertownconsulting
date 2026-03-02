@@ -22,11 +22,11 @@
     </a>
 
     <div class="nav__links">
-      <a href="#services">Services</a>
-      <a href="#products">Products</a>
+      <a class="nav__link" href="#services">Services</a>
+      <a class="nav__link" href="#products">Products</a>
 
-      <!-- Credentials button -->
-      <button type="button" class="btn btn--ghost" id="credentialsBtn" aria-haspopup="dialog">
+      <!-- Credentials (styled like other nav links) -->
+      <button type="button" class="nav__link" id="credentialsBtn" aria-haspopup="dialog">
         Credentials
       </button>
 
@@ -262,7 +262,7 @@
   function openModal() {
     if (!modal) return;
     modal.hidden = false;
-    document.body.style.overflow = "hidden"; // prevent background scroll
+    document.body.style.overflow = "hidden";
     const closeBtn = modal.querySelector(".modal__close");
     closeBtn && closeBtn.focus();
   }
@@ -276,13 +276,11 @@
 
   btn && btn.addEventListener("click", openModal);
 
-  // Close on backdrop click or close button click
   modal && modal.addEventListener("click", (e) => {
     const target = e.target;
     if (target && target.getAttribute("data-close") === "true") closeModal();
   });
 
-  // Close on Escape
   document.addEventListener("keydown", (e) => {
     if (modal && !modal.hidden && e.key === "Escape") closeModal();
   });
